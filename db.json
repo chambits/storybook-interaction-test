@@ -1,0 +1,380 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Burger Kingdom",
+      "image": "burger.jpg",
+      "rating": 4.2,
+      "description": "Nicest place for burgers",
+      "isNew": true,
+      "categories": ["Burgers", "Comfort Food"],
+      "address": "123 Main Street, Foodville",
+      "hours": "9:00 AM - 10:00 PM",
+      "priceRange": "$$",
+      "phone": "(555) 123-4567",
+      "menu": [
+        {
+          "name": "Classic Burger",
+          "price": 8.99,
+          "description": "Beef patty with lettuce, tomato, and special sauce"
+        },
+        {
+          "name": "Cheese Burger",
+          "price": 9.99,
+          "description": "Classic burger with American cheese"
+        },
+        {
+          "name": "Bacon Burger",
+          "price": 10.99,
+          "description": "Classic burger with crispy bacon"
+        },
+        {
+          "name": "Veggie Burger",
+          "price": 8.99,
+          "description": "Plant-based patty with all the fixings"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "John D.",
+          "rating": 5,
+          "comment": "Best burgers in town! The special sauce is amazing."
+        },
+        {
+          "author": "Sarah M.",
+          "rating": 4,
+          "comment": "Great food, but can get crowded during lunch hours."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pizza Paradise",
+      "image": "pizza.jpg",
+      "rating": 4.5,
+      "description": "Authentic Italian pizzas",
+      "isNew": false,
+      "categories": ["Pizza", "Italian"],
+      "address": "456 Flour Avenue, Foodville",
+      "hours": "11:00 AM - 11:00 PM",
+      "priceRange": "$$",
+      "phone": "(555) 987-6543",
+      "menu": [
+        {
+          "name": "Margherita",
+          "price": 12.99,
+          "description": "Classic tomato sauce, mozzarella, and basil"
+        },
+        {
+          "name": "Pepperoni",
+          "price": 14.99,
+          "description": "Tomato sauce, mozzarella, and pepperoni"
+        },
+        {
+          "name": "Vegetarian",
+          "price": 13.99,
+          "description": "Tomato sauce, mozzarella, and assorted vegetables"
+        },
+        {
+          "name": "Hawaiian",
+          "price": 15.99,
+          "description": "Tomato sauce, mozzarella, ham, and pineapple"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Mike R.",
+          "rating": 5,
+          "comment": "Authentic Italian taste. Reminds me of Naples!"
+        },
+        {
+          "author": "Lisa T.",
+          "rating": 4,
+          "comment": "Delicious pizzas, but a bit pricey."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sushi Sensation",
+      "image": "sushi.jpg",
+      "rating": 4.8,
+      "description": "Fresh and delicious sushi",
+      "isNew": true,
+      "categories": ["Japanese", "Sushi"],
+      "address": "789 Ocean Drive, Foodville",
+      "hours": "12:00 PM - 10:00 PM",
+      "priceRange": "$$$",
+      "phone": "(555) 456-7890",
+      "menu": [
+        {
+          "name": "California Roll",
+          "price": 7.99,
+          "description": "Crab, avocado, and cucumber"
+        },
+        {
+          "name": "Spicy Tuna Roll",
+          "price": 8.99,
+          "description": "Tuna and spicy mayo"
+        },
+        {
+          "name": "Dragon Roll",
+          "price": 12.99,
+          "description": "Eel, avocado, and cucumber"
+        },
+        {
+          "name": "Salmon Nigiri",
+          "price": 6.99,
+          "description": "Fresh salmon over rice"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Emma L.",
+          "rating": 5,
+          "comment": "The freshest sushi I've had outside of Japan!"
+        },
+        {
+          "author": "David K.",
+          "rating": 5,
+          "comment": "Excellent quality and presentation. Worth every penny."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Taco Temple",
+      "image": "taco.jpg",
+      "rating": 4.3,
+      "description": "Authentic Mexican street food",
+      "isNew": false,
+      "categories": ["Mexican", "Street Food"],
+      "address": "321 Spice Street, Foodville",
+      "hours": "10:00 AM - 9:00 PM",
+      "priceRange": "$",
+      "phone": "(555) 234-5678",
+      "menu": [
+        {
+          "name": "Beef Taco",
+          "price": 3.99,
+          "description": "Seasoned beef with lettuce, cheese, and salsa"
+        },
+        {
+          "name": "Chicken Taco",
+          "price": 3.99,
+          "description": "Grilled chicken with lettuce, cheese, and salsa"
+        },
+        {
+          "name": "Fish Taco",
+          "price": 4.99,
+          "description": "Battered fish with slaw and lime crema"
+        },
+        {
+          "name": "Veggie Taco",
+          "price": 3.49,
+          "description": "Grilled vegetables with guacamole and salsa"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Carlos R.",
+          "rating": 4,
+          "comment": "Authentic flavors that remind me of home."
+        },
+        {
+          "author": "Sophia W.",
+          "rating": 5,
+          "comment": "Best street tacos in the area. Great prices too!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Pasta Palace",
+      "image": "pasta.jpg",
+      "rating": 4.6,
+      "description": "The best handmade pasta in town",
+      "isNew": false,
+      "categories": ["Italian", "Pasta"],
+      "address": "852 Noodle Lane, Foodville",
+      "hours": "11:00 AM - 10:00 PM",
+      "priceRange": "$$",
+      "phone": "(555) 678-9012",
+      "menu": [
+        {
+          "name": "Spaghetti Carbonara",
+          "price": 14.99,
+          "description": "Classic carbonara with pancetta and parmesan cheese"
+        },
+        {
+          "name": "Fettuccine Alfredo",
+          "price": 13.99,
+          "description": "Creamy Alfredo sauce with fettuccine pasta"
+        },
+        {
+          "name": "Lasagna",
+          "price": 15.99,
+          "description": "Layered pasta with beef, ricotta, and marinara sauce"
+        },
+        {
+          "name": "Pesto Penne",
+          "price": 12.99,
+          "description": "Penne pasta tossed in homemade basil pesto sauce"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Maria G.",
+          "rating": 5,
+          "comment": "Authentic and flavorful! Feels like eating in Italy."
+        },
+        {
+          "author": "James T.",
+          "rating": 4,
+          "comment": "Delicious but slightly expensive."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Steakhouse Supreme",
+      "image": "steak.jpg",
+      "rating": 4.7,
+      "description": "Juicy steaks cooked to perfection",
+      "isNew": true,
+      "categories": ["Steakhouse", "Fine Dining"],
+      "address": "963 Grill Road, Foodville",
+      "hours": "5:00 PM - 11:00 PM",
+      "priceRange": "$$$",
+      "phone": "(555) 789-0123",
+      "menu": [
+        {
+          "name": "Ribeye Steak",
+          "price": 29.99,
+          "description": "Tender ribeye with a side of garlic mashed potatoes"
+        },
+        {
+          "name": "Filet Mignon",
+          "price": 34.99,
+          "description": "Premium filet mignon with red wine reduction sauce"
+        },
+        {
+          "name": "T-Bone Steak",
+          "price": 27.99,
+          "description": "Chargrilled T-bone with roasted vegetables"
+        },
+        {
+          "name": "Grilled Lamb Chops",
+          "price": 25.99,
+          "description": "Herb-marinated lamb chops served with mint sauce"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Robert L.",
+          "rating": 5,
+          "comment": "The best steak I've ever had. Cooked to perfection!"
+        },
+        {
+          "author": "Anna P.",
+          "rating": 4,
+          "comment": "Great quality, but portions could be bigger."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Curry Kingdom",
+      "image": "curry.jpg",
+      "rating": 4.4,
+      "description": "Rich and flavorful Indian curries",
+      "isNew": false,
+      "categories": ["Indian", "Curry"],
+      "address": "741 Spice Alley, Foodville",
+      "hours": "11:00 AM - 10:00 PM",
+      "priceRange": "$$",
+      "phone": "(555) 890-1234",
+      "menu": [
+        {
+          "name": "Butter Chicken",
+          "price": 13.99,
+          "description": "Creamy tomato-based curry with tender chicken pieces"
+        },
+        {
+          "name": "Lamb Rogan Josh",
+          "price": 14.99,
+          "description": "Slow-cooked lamb in a rich, aromatic sauce"
+        },
+        {
+          "name": "Vegetable Biryani",
+          "price": 12.99,
+          "description": "Fragrant basmati rice with mixed vegetables and spices"
+        },
+        {
+          "name": "Paneer Tikka Masala",
+          "price": 11.99,
+          "description": "Grilled paneer cubes in a creamy, spiced tomato sauce"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Neha S.",
+          "rating": 5,
+          "comment": "Amazing flavors, just like homemade Indian food!"
+        },
+        {
+          "author": "Tom H.",
+          "rating": 4,
+          "comment": "Great curries but could use more spice options."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Vegan Vibes",
+      "image": "vegan.jpg",
+      "rating": 4.9,
+      "description": "Plant-based meals that taste amazing",
+      "isNew": true,
+      "categories": ["Vegan", "Healthy"],
+      "address": "258 Green Street, Foodville",
+      "hours": "8:00 AM - 8:00 PM",
+      "priceRange": "$$",
+      "phone": "(555) 345-6789",
+      "menu": [
+        {
+          "name": "Avocado Toast",
+          "price": 7.99,
+          "description": "Whole grain toast topped with fresh avocado and microgreens"
+        },
+        {
+          "name": "Vegan Buddha Bowl",
+          "price": 12.99,
+          "description": "Quinoa, chickpeas, avocado, and roasted vegetables"
+        },
+        {
+          "name": "Vegan Mac & Cheese",
+          "price": 10.99,
+          "description": "Cashew-based cheese sauce over gluten-free pasta"
+        },
+        {
+          "name": "Tofu Stir-Fry",
+          "price": 11.99,
+          "description": "Marinated tofu with mixed vegetables and soy glaze"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "Samantha J.",
+          "rating": 5,
+          "comment": "So flavorful, you won’t miss the meat!"
+        },
+        {
+          "author": "Lucas B.",
+          "rating": 5,
+          "comment": "Best vegan food in town. Highly recommend the Buddha Bowl!"
+        }
+      ]
+    }
+  ]
+}

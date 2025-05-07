@@ -4,6 +4,7 @@ import { ThemeProvider } from "./components/ThemeContextProvider";
 import MainLayout from "@/layouts/MainLayout";
 import RestaurantDetailsPage from "@/pages/RestaurantDetailsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ function App() {
                 path="/restaurant/:id"
                 element={<RestaurantDetailsPage />}
               />
+              <Route path="/checkout" element={<CheckoutPage />} />
             </Routes>
           </BrowserRouter>
         </MainLayout>

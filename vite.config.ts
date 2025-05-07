@@ -16,17 +16,3 @@ export default defineConfig({
     },
   },
 } as UserConfig);
-
-// export default defineConfig({
-//   plugins: [react()],
-//   base:
-//     process.env.NODE_ENV === "production"
-//       ? "/product-admin-dashboard/login"
-//       : "/",
-//   test: {
-//     environment: "jsdom",
-//     globals: true,
-//     setupFiles: "./src/test/setup.ts",
-//     testTimeout: 1000 * 60,
-//   },
-// } as UserConfig);

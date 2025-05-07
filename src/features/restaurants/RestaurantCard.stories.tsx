@@ -4,6 +4,7 @@ import { within, userEvent } from "@storybook/test";
 import RestaurantCard from "./RestaurantCard";
 import { BrowserRouter } from "react-router-dom";
 import "@/index.css";
+import { ThemeProvider } from "@/components/ThemeContextProvider";
 
 // Wrap the component in BrowserRouter since it uses Link
 // const RestaurantCardWithRouter = (args) => (
@@ -29,6 +30,7 @@ const meta: Meta<typeof RestaurantCard> = {
       rating: 4.2,
       description: "Nicest place for burgers",
       isNew: true,
+      isClosed: false,
       categories: ["Burgers", "Comfort Food"],
     },
   },
@@ -51,6 +53,23 @@ export const NotNew: Story = {
       rating: 4.5,
       description: "Authentic Italian pizzas",
       isNew: false,
+      isClosed: false,
+      categories: ["Pizza", "Italian"],
+    },
+  },
+};
+
+// Story with a closed restaurant
+export const Closed: Story = {
+  args: {
+    restaurant: {
+      id: 2,
+      name: "Pizza Palace",
+      image: "pizza.jpg",
+      rating: 4.5,
+      description: "Authentic Italian pizzas",
+      isNew: false,
+      isClosed: true,
       categories: ["Pizza", "Italian"],
     },
   },
@@ -80,7 +99,26 @@ export const MultipleCategories: Story = {
       rating: 4.8,
       description: "A blend of world cuisines",
       isNew: true,
+      isClosed: false,
       categories: ["Asian", "European", "Fusion", "Vegetarian", "Seafood"],
+    },
+  },
+};
+
+export const DarkTheme: Story = {
+  decorators: [
+    (Story) => (
+      <ThemeProvider defaultTheme="dark" storageKey="storybook-theme">
+        <div className="p-6">
+          <Story />
+        </div>
+      </ThemeProvider>
+    ),
+  ],
+  parameters: {
+    backgrounds: { default: "dark" },
+    themes: {
+      default: "dark",
     },
   },
 };

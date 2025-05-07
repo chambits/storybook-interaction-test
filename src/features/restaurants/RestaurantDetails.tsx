@@ -1,19 +1,13 @@
-import { Utensils } from "lucide-react";
-
-import { MapPin } from "lucide-react";
-
-import { Phone } from "lucide-react";
-
-import { CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Clock, Star } from "lucide-react";
 import type { Restaurant } from "@/types";
+import { Clock, MapPin, Phone, Star, Utensils } from "lucide-react";
 
 interface RestaurantDetailsProps {
   restaurant: Restaurant;

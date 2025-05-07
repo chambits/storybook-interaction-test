@@ -41,7 +41,7 @@ export function createTestWrapper() {
 /**
  * Helper to mock fetch responses for testing
  */
-export function setupFetchMock(data: any, ok = true) {
+export function setupFetchMock(data: unknown, ok = true) {
   global.fetch = vi.fn(() =>
     Promise.resolve({
       ok,

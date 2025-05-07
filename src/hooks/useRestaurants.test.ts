@@ -3,8 +3,7 @@ import { renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { useRestaurants } from "./useRestaurants";
 
-// Setup global.fetch mock
-const setupFetchMock = (data: any, ok = true) => {
+const setupFetchMock = (data: unknown, ok = true) => {
   global.fetch = vi.fn(() =>
     Promise.resolve({
       ok,

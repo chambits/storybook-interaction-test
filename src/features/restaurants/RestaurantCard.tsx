@@ -1,3 +1,4 @@
+import Image from "@/components/Image";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -7,10 +8,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Star } from "lucide-react";
-import { Link } from "react-router-dom";
-import Image from "@/components/Image";
 import { getImageUrl } from "@/lib/utils";
+import { Star, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 interface Restaurant {
   id: number;
@@ -19,6 +20,7 @@ interface Restaurant {
   rating: number;
   description: string;
   isNew: boolean;
+  isClosed?: boolean;
   categories: string[];
 }
 
@@ -28,8 +30,19 @@ interface RestaurantCardProps {
 
 export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
-    <Link to={`/restaurant/${restaurant.id}`} className="block h-full">
-      <Card className="overflow-hidden h-full transition-all hover:shadow-md">
+    <Link
+      to={`/restaurant/${restaurant.id}`}
+      className={cn(
+        "block h-full",
+        restaurant.isClosed && "pointer-events-none"
+      )}
+    >
+      <Card
+        className={cn(
+          "overflow-hidden h-full transition-all hover:shadow-md",
+          restaurant.isClosed && "opacity-60 grayscale"
+        )}
+      >
         <div className="relative bg-muted">
           <Image
             src={getImageUrl("food", restaurant.image)}
@@ -40,6 +53,12 @@ export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
           {restaurant.isNew && (
             <div className="absolute top-2 left-2 bg-[#e8f5c8] text-black text-xs font-medium px-2 py-1 rounded">
               new
+            </div>
+          )}
+          {restaurant.isClosed && (
+            <div className="absolute top-2 right-2 bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded flex items-center gap-1">
+              <Clock className="h-3 w-3" />
+              closed
             </div>
           )}
         </div>

@@ -17,7 +17,7 @@ interface MenuProps {
   restaurant: Restaurant;
 }
 
-export default function Menu({ restaurant }: MenuProps) {
+export const Menu = ({ restaurant }: MenuProps) => {
   const { menu, id, name } = restaurant;
   const navigate = useNavigate();
   const [orderItems, setOrderItems] = useState<OrderItem[]>([]);
@@ -173,4 +173,4 @@ export default function Menu({ restaurant }: MenuProps) {
       </CardFooter>
     </Card>
   );
-}
+};

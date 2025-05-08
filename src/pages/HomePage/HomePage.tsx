@@ -1,9 +1,9 @@
-import RestaurantCard from "@/features/restaurants/RestaurantCard";
+import { RestaurantCard } from "@/features/restaurants/RestaurantCard";
 import { Input } from "@/components/ui/input";
 import { useRestaurants } from "@/hooks/useRestaurants";
 import { Search } from "lucide-react";
 
-export default function HomePage() {
+export const HomePage = () => {
   const { restaurants } = useRestaurants();
 
   return (
@@ -26,4 +26,4 @@ export default function HomePage() {
       </div>
     </div>
   );
-}
+};

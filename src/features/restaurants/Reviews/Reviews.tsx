@@ -8,7 +8,7 @@ import type { Review } from "@/types";
 interface ReviewProps {
   reviews: Review[];
 }
-export default function Reviews({ reviews }: ReviewProps) {
+export const Reviews = ({ reviews }: ReviewProps) => {
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
@@ -38,4 +38,4 @@ export default function Reviews({ reviews }: ReviewProps) {
       </div>
     </div>
   );
-}
+};

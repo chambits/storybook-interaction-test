@@ -28,7 +28,7 @@ interface RestaurantCardProps {
   restaurant: Restaurant;
 }
 
-export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
+export const RestaurantCard = ({ restaurant }: RestaurantCardProps) => {
   return (
     <Link
       to={`/restaurant/${restaurant.id}`}
@@ -90,4 +90,4 @@ export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
       </Card>
     </Link>
   );
-}
+};

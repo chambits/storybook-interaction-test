@@ -13,9 +13,7 @@ interface RestaurantDetailsProps {
   restaurant: Restaurant;
 }
 
-export default function RestaurantDetails({
-  restaurant,
-}: RestaurantDetailsProps) {
+export const RestaurantDetails = ({ restaurant }: RestaurantDetailsProps) => {
   return (
     <>
       <Card className="mb-6">
@@ -74,4 +72,4 @@ export default function RestaurantDetails({
       </Card>
     </>
   );
-}
+};

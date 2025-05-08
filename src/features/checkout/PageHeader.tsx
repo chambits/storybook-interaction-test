@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
-interface PageHeaderProps {
+interface CheckoutPageHeaderProps {
   onGoBack: () => void;
 }
 
-export function PageHeader({ onGoBack }: PageHeaderProps) {
+export function CheckoutPageHeader({ onGoBack }: CheckoutPageHeaderProps) {
   return (
     <div className="flex items-center justify-between mb-6">
       <h2 className="text-3xl font-bold">Checkout</h2>

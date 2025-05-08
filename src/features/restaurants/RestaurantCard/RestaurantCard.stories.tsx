@@ -1,17 +1,10 @@
 // src/features/restaurants/RestaurantCard.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { within, userEvent } from "@storybook/test";
-import RestaurantCard from "./RestaurantCard";
 import { BrowserRouter } from "react-router-dom";
 import "@/index.css";
-import { ThemeProvider } from "@/components/ThemeContextProvider";
-
-// Wrap the component in BrowserRouter since it uses Link
-// const RestaurantCardWithRouter = (args) => (
-//   <BrowserRouter>
-//     <RestaurantCard {...args} />
-//   </BrowserRouter>
-// );
+import { ThemeProvider } from "@/providers/ThemeContextProvider";
+import { RestaurantCard } from "./RestaurantCard";
 
 const meta: Meta<typeof RestaurantCard> = {
   title: "Features/Restaurants/RestaurantCard",

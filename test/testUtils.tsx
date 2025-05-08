@@ -1,7 +1,7 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { vi } from "vitest";
-import { ThemeProvider } from "@/components/ThemeContextProvider";
+import { ThemeProvider } from "@/providers/ThemeContextProvider";
 
 /**
  * Creates a wrapper with QueryClientProvider for testing hooks that use React Query

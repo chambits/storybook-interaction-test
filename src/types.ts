@@ -7,6 +7,7 @@ export type Restaurant = {
   isNew: boolean;
   categories: string[];
   address: string;
+  isClosed: boolean;
   hours: string;
   priceRange: string;
   phone: string;

@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Menu from "@/features/restaurants/Menu";
-import RestaurantDetails from "@/features/restaurants/RestaurantDetails";
+import { Menu } from "@/features/restaurants/Menu";
+import { RestaurantDetails } from "@/features/restaurants/RestaurantDetails";
 import RestaurantHeader from "@/features/restaurants/RestaurantHeader";
-import Reviews from "@/features/restaurants/Reviews";
+import { Reviews } from "@/features/restaurants/Reviews";
 import { useRestaurants } from "@/hooks/useRestaurants";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";

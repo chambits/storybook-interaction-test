@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "@/pages/HomePage";
-import { ThemeProvider } from "./components/ThemeContextProvider";
+import { HomePage } from "@/pages/HomePage";
+import { ThemeProvider } from "./providers/ThemeContextProvider";
 import MainLayout from "@/layouts/MainLayout";
-import RestaurantDetailsPage from "@/pages/RestaurantDetailsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import CheckoutPage from "./pages/CheckoutPage";
+import { CheckoutPage } from "@/pages/CheckoutPage";
+import RestaurantDetailsPage from "./pages/RestaurantDetailsPage/RestaurantDetailsPage";
 
 const queryClient = new QueryClient();
 

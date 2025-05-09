@@ -42,6 +42,7 @@ export const RestaurantCard = ({ restaurant }: RestaurantCardProps) => {
           "overflow-hidden h-full transition-all hover:shadow-md",
           restaurant.isClosed && "opacity-60 grayscale"
         )}
+        data-testid="restaurant-card"
       >
         <div className="relative bg-muted">
           <Image

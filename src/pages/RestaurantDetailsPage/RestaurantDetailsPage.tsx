@@ -8,7 +8,7 @@ import { useRestaurants } from "@/hooks/useRestaurants";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function RestaurantDetailsPage() {
+export const RestaurantDetailsPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { getRestaurantById } = useRestaurants();
@@ -58,4 +58,4 @@ export default function RestaurantDetailsPage() {
       </div>
     </div>
   );
-}
+};

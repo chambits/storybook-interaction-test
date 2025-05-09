@@ -4,7 +4,7 @@ import { ThemeProvider } from "./providers/ThemeContextProvider";
 import MainLayout from "@/layouts/MainLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { CheckoutPage } from "@/pages/CheckoutPage";
-import RestaurantDetailsPage from "./pages/RestaurantDetailsPage/RestaurantDetailsPage";
+import { RestaurantDetailsPage } from "@/pages/RestaurantDetailsPage";
 
 const queryClient = new QueryClient();
 

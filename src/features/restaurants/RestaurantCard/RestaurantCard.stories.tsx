@@ -1,20 +1,14 @@
-// src/features/restaurants/RestaurantCard.stories.tsx
-import type { Meta, StoryObj } from "@storybook/react";
-import { within, userEvent } from "@storybook/test";
-import { BrowserRouter } from "react-router-dom";
 import "@/index.css";
-import { ThemeProvider } from "@/providers/ThemeContextProvider";
+import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
 import { RestaurantCard } from "./RestaurantCard";
 
 const meta: Meta<typeof RestaurantCard> = {
   title: "Features/Restaurants/RestaurantCard",
   component: RestaurantCard,
-  // Use a decorator to provide the router context
-  decorators: [(Story) => <BrowserRouter>{Story()}</BrowserRouter>],
   parameters: {
     layout: "centered",
   },
-  // Sample restaurant data
   args: {
     restaurant: {
       id: 1,
@@ -99,15 +93,6 @@ export const MultipleCategories: Story = {
 };
 
 export const DarkTheme: Story = {
-  decorators: [
-    (Story) => (
-      <ThemeProvider defaultTheme="dark" storageKey="storybook-theme">
-        <div className="p-6">
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
   parameters: {
     backgrounds: { default: "dark" },
     themes: {

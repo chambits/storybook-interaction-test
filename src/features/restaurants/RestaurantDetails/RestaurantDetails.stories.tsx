@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import "@/index.css";
-import { ThemeProvider } from "@/providers/ThemeContextProvider";
+import type { Meta, StoryObj } from "@storybook/react";
 import { RestaurantDetails } from "./RestaurantDetails";
 
 const meta: Meta<typeof RestaurantDetails> = {
@@ -9,7 +8,6 @@ const meta: Meta<typeof RestaurantDetails> = {
   parameters: {
     layout: "centered",
   },
-  // Sample restaurant data
   args: {
     restaurant: {
       id: 1,
@@ -122,15 +120,6 @@ export const HighEndRestaurant: Story = {
 
 // Dark theme story
 export const DarkTheme: Story = {
-  decorators: [
-    (Story) => (
-      <ThemeProvider defaultTheme="dark" storageKey="storybook-theme">
-        <div className="p-6 bg-background">
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
   parameters: {
     backgrounds: { default: "dark" },
     themes: {

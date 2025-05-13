@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { Order, REDIRECT_DELAY, PROCESSING_DELAY } from "./types";
 
-interface CheckoutState {
+export interface CheckoutState {
   order: Order | null;
   isSubmitting: boolean;
   isSuccess: boolean;

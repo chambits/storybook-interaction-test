@@ -1,10 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage } from "@/pages/HomePage";
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./providers/ThemeContextProvider";
 import MainLayout from "@/layouts/MainLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { CheckoutPage } from "@/pages/CheckoutPage";
-import { RestaurantDetailsPage } from "@/pages/RestaurantDetailsPage";
+import { AppRoutes } from "./Routes";
 
 const queryClient = new QueryClient();
 
@@ -14,14 +12,7 @@ function App() {
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <MainLayout>
           <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route
-                path="/restaurant/:id"
-                element={<RestaurantDetailsPage />}
-              />
-              <Route path="/checkout" element={<CheckoutPage />} />
-            </Routes>
+            <AppRoutes />
           </BrowserRouter>
         </MainLayout>
       </ThemeProvider>

@@ -1,13 +1,10 @@
-import { ThemeProvider } from "@/providers/ThemeContextProvider";
+import MainLayout from "@/layouts/MainLayout";
+import { AppRoutes } from "@/Routes";
 import { Meta, StoryObj } from "@storybook/react";
 import { expect, within } from "@storybook/test";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { http, HttpResponse } from "msw";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
-import MainLayout from "@/layouts/MainLayout";
-import { CheckoutPage } from "@/pages/CheckoutPage";
-import { HomePage } from "@/pages/HomePage";
-import { RestaurantDetailsPage } from "@/pages/RestaurantDetailsPage";
+import { MemoryRouter } from "react-router-dom";
+import { withDeeplink } from "../../.storybook/withDeeplink";
 
 export const sampleRestaurants = [
   {
@@ -41,34 +38,12 @@ export const sampleRestaurants = [
 
 // Create a mock App component that we can control for Storybook
 const MockApp = ({ initialRoute = "/" }) => {
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        staleTime: 0,
-        refetchOnMount: true,
-        refetchOnWindowFocus: false,
-      },
-    },
-  });
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <MainLayout>
-          <MemoryRouter initialEntries={[encodeURI(initialRoute)]}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route
-                path="/restaurant/:id"
-                element={<RestaurantDetailsPage />}
-              />
-              <Route path="/checkout" element={<CheckoutPage />} />
-            </Routes>
-          </MemoryRouter>
-        </MainLayout>
-      </ThemeProvider>
-    </QueryClientProvider>
+    <MainLayout>
+      <MemoryRouter initialEntries={[encodeURI(initialRoute)]}>
+        <AppRoutes />
+      </MemoryRouter>
+    </MainLayout>
   );
 };
 
@@ -77,6 +52,11 @@ const meta = {
   component: MockApp,
   parameters: {
     layout: "fullscreen",
+    deeplink: {
+      path: "/",
+      route: "/",
+    },
+    decorators: [withDeeplink],
     msw: {
       handlers: [
         http.get("http://localhost:3001/restaurants", () => {
@@ -153,30 +133,30 @@ export const ToCheckoutPage: Story = {
   },
 };
 
-// export const CheckoutToSuccess: Story = {
-//   play: async (context) => {
-//     await ToCheckoutPage.play(context);
-//     const { canvasElement, userEvent, step } = context;
+export const CheckoutToSuccess: Story = {
+  play: async (context) => {
+    await ToCheckoutPage.play?.(context);
+    const { canvasElement, userEvent, step } = context;
 
-//     const canvas = within(canvasElement);
+    const canvas = within(canvasElement);
 
-//     await step("Place the order", async () => {
-//       // Wait for checkout page to load
-//       await new Promise((resolve) => setTimeout(resolve, 500));
+    await step("Place the order", async () => {
+      // Wait for checkout page to load
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
-//       try {
-//         // Find and click the Place Order button
-//         const placeOrderButton = await canvas.findByText(/Place Order/i);
-//         await userEvent.click(placeOrderButton);
+      try {
+        // Find and click the Place Order button
+        const placeOrderButton = await canvas.findByText(/Place Order/i);
+        await userEvent.click(placeOrderButton);
 
-//         // Verify success message appears
-//         const successMessage = await canvas.findByText(
-//           /Order Placed Successfully/i
-//         );
-//         await expect(successMessage).toBeInTheDocument();
-//       } catch (error) {
-//         console.error("Failed to place order:", error);
-//       }
-//     });
-//   },
-// };
+        // Verify success message appears
+        const successMessage = await canvas.findByText(
+          /Order Placed Successfully/i
+        );
+        await expect(successMessage).toBeInTheDocument();
+      } catch (error) {
+        console.error("Failed to place order:", error);
+      }
+    });
+  },
+};

@@ -1,26 +1,10 @@
 import "@/index.css";
-import type { Meta, StoryObj } from "@storybook/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { http, HttpResponse } from "msw";
-import { Route, Routes } from "react-router-dom";
-import { MemoryRouter } from "react-router-dom";
-import { RestaurantDetailsPage } from "./RestaurantDetailsPage";
 import { ThemeProvider } from "@/providers/ThemeContextProvider";
+import type { Meta, StoryObj } from "@storybook/react";
+import { http, HttpResponse } from "msw";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { RestaurantDetailsPage } from "./RestaurantDetailsPage";
 
-// Create a new QueryClient for each story
-const createQueryClient = () =>
-  new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        staleTime: 0,
-        refetchOnWindowFocus: false,
-        refetchOnMount: true,
-      },
-    },
-  });
-
-// Sample restaurant data
 const sampleRestaurant = {
   id: 1,
   name: "Burger Kingdom",
@@ -75,16 +59,12 @@ const sampleRestaurant = {
 const sampleRestaurants = [sampleRestaurant];
 
 const RestaurantDetailsPageWithProviders = () => {
-  const queryClient = createQueryClient();
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={[`/restaurant/${sampleRestaurant.id}`]}>
-        <Routes>
-          <Route path="/restaurant/:id" element={<RestaurantDetailsPage />} />
-        </Routes>
-      </MemoryRouter>
-    </QueryClientProvider>
+    <MemoryRouter initialEntries={[`/restaurant/${sampleRestaurant.id}`]}>
+      <Routes>
+        <Route path="/restaurant/:id" element={<RestaurantDetailsPage />} />
+      </Routes>
+    </MemoryRouter>
   );
 };
 
@@ -101,8 +81,9 @@ const meta = {
         }),
       ],
     },
+    deeplink: "/restaurant/1",
   },
-} satisfies Meta<typeof RestaurantDetailsPageWithProviders>;
+} satisfies Meta<typeof RestaurantDetailsPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

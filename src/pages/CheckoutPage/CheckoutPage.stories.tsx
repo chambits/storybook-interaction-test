@@ -1,18 +1,9 @@
-import { useCheckoutStore } from "@/features/checkout/store";
 import type { Meta, StoryObj } from "@storybook/react";
-import { BrowserRouter } from "react-router-dom";
 import { CheckoutPage } from "./CheckoutPage";
 
 const meta = {
   title: "Pages/CheckoutPage",
   component: CheckoutPage,
-  decorators: [
-    (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-    ),
-  ],
   parameters: {
     layout: "fullscreen",
   },
@@ -22,23 +13,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Empty: Story = {
-  decorators: [
-    (Story) => {
-      useCheckoutStore.setState({
+  parameters: {
+    stores: {
+      checkout: {
         order: null,
         isSubmitting: false,
         isSuccess: false,
         loadOrderFromStorage: () => false,
-      });
-      return <Story />;
+      },
     },
-  ],
+  },
 };
 
 export const WithItems: Story = {
-  decorators: [
-    (Story) => {
-      useCheckoutStore.setState({
+  parameters: {
+    stores: {
+      checkout: {
         order: {
           restaurantId: 1,
           restaurantName: "Burger Kingdom",
@@ -61,8 +51,7 @@ export const WithItems: Story = {
         isSubmitting: false,
         isSuccess: false,
         loadOrderFromStorage: () => true,
-      });
-      return <Story />;
+      },
     },
-  ],
+  },
 };

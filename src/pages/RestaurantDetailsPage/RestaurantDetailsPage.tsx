@@ -11,9 +11,16 @@ import { useNavigate, useParams } from "react-router-dom";
 export const RestaurantDetailsPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { getRestaurantById } = useRestaurants();
+  const { getRestaurantById, isLoading, error } = useRestaurants();
   const restaurant = getRestaurantById(Number(id));
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading restaurant</div>;
+  }
   if (!restaurant) {
     return (
       <div className="container mx-auto px-4 py-8 text-center">

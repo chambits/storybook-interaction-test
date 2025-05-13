@@ -1,18 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Menu } from "./Menu";
 import "@/index.css";
-import { ThemeProvider } from "@/providers/ThemeContextProvider";
-import { BrowserRouter } from "react-router-dom";
-import { within, userEvent } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
+import { Menu } from "./Menu";
 
 const meta: Meta<typeof Menu> = {
   title: "Features/Restaurants/Menu",
   component: Menu,
-  decorators: [(Story) => <BrowserRouter>{Story()}</BrowserRouter>],
   parameters: {
     layout: "centered",
   },
-  // Sample restaurant data
   args: {
     restaurant: {
       id: 1,
@@ -176,19 +172,10 @@ export const AddItemsToOrder: Story = {
 
 // Dark theme story
 export const DarkTheme: Story = {
-  decorators: [
-    (Story) => (
-      <ThemeProvider defaultTheme="dark" storageKey="storybook-theme">
-        <div className="p-6 bg-background" style={{ width: "600px" }}>
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
   parameters: {
-    backgrounds: { default: "dark" },
-    themes: {
-      default: "dark",
+    globals: {
+      theme: "dark",
     },
+    backgrounds: { default: "dark" },
   },
 };

@@ -1,22 +1,7 @@
 import "@/index.css";
 import type { Meta, StoryObj } from "@storybook/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { http, HttpResponse } from "msw";
-import { BrowserRouter } from "react-router-dom";
 import { HomePage } from "./HomePage";
-import { ThemeProvider } from "@/providers/ThemeContextProvider";
-
-const createQueryClient = () =>
-  new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: false,
-        staleTime: 0,
-        refetchOnWindowFocus: false,
-        refetchOnMount: true,
-      },
-    },
-  });
 
 const sampleRestaurants = [
   {
@@ -69,21 +54,9 @@ const sampleRestaurants = [
   },
 ];
 
-const HomePageWithProviders = () => {
-  const queryClient = createQueryClient();
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <HomePage />
-      </BrowserRouter>
-    </QueryClientProvider>
-  );
-};
-
 const meta = {
   title: "Pages/HomePage",
-  component: HomePageWithProviders,
+  component: HomePage,
   parameters: {
     layout: "fullscreen",
     msw: {
@@ -95,7 +68,7 @@ const meta = {
       ],
     },
   },
-} satisfies Meta<typeof HomePageWithProviders>;
+} satisfies Meta<typeof HomePage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -115,7 +88,6 @@ export const Loading: Story = {
   },
 };
 
-// // Error state
 export const Error: Story = {
   parameters: {
     msw: {
@@ -129,15 +101,6 @@ export const Error: Story = {
 };
 
 export const DarkTheme: Story = {
-  decorators: [
-    (Story) => (
-      <ThemeProvider defaultTheme="dark" storageKey="storybook-theme">
-        <div className="bg-background min-h-screen">
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
   parameters: {
     backgrounds: { default: "dark" },
     themes: {

@@ -1,7 +1,6 @@
+import "@/index.css";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Reviews } from "./Reviews";
-import "@/index.css";
-import { ThemeProvider } from "@/providers/ThemeContextProvider";
 
 const meta: Meta<typeof Reviews> = {
   title: "Features/Restaurants/Reviews",
@@ -114,15 +113,6 @@ export const SingleReview: Story = {
 
 // Dark theme story
 export const DarkTheme: Story = {
-  decorators: [
-    (Story) => (
-      <ThemeProvider defaultTheme="dark" storageKey="storybook-theme">
-        <div className="p-6 bg-background" style={{ width: "600px" }}>
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
-  ],
   parameters: {
     backgrounds: { default: "dark" },
     themes: {

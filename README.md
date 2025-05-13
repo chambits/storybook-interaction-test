@@ -32,7 +32,7 @@ yarn install
 2. Start Storybook:
 
 ```bash
-yarn run storybook
+yarn storybook
 ```
 
 3. View the component documentation and tests at [http://localhost:6006](http://localhost:6006)
